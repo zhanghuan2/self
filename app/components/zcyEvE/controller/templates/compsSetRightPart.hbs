@@ -1,0 +1,33 @@
+<!--<div class="right-button"><button class="btn btn-primary btn-medium addpage">增加页面</button></div>-->
+<div class="comps-new-title">
+  <div class="title">
+    通用组件
+    <i class="icon-shouqi iconfont"></i>
+  </div>
+</div>
+<ul class="right-page-ul">
+
+{{#each this}}
+  <li class="show-title showmore" title="{{name}}" >
+    <div class="title">{{@key}}</div>
+    <ul class="show-ele">
+      {{#each this.include}}
+        <li class="showmore lastli">
+          <a href="javascript:void(0)" class="show-parts" data-path="{{this.path}}" style="width: 100%">
+            <div style="text-align: center">
+              <p style="color:#8F8F8F">
+                <i class="{{this.icon}} iconfont"></i>
+              </p>
+              <p style="color:#606060;font-size: 12px;">
+                {{@key}}
+              </p>
+            </div>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </li>
+{{/each}}
+</ul>
+
+

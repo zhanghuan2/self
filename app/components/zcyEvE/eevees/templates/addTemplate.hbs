@@ -1,0 +1,43 @@
+<div style="height: 300px" class="addtemplate-box">
+  <table>
+  <tbody>
+  <tr>
+    <td width="20%">
+      模板方式：
+    </td>
+    <td>
+      <label>
+        模板选择:<input class="radio-choose" type="radio" name="chooseType" value="select" checked/>
+        自定义输入:<input class="radio-choose" type="radio" name="chooseType" value="input"/>
+      </label>
+    </td>
+    <td width="60%"></td>
+  </tr>
+  <tr class="hide line2">
+    <td>输入模板ID：</td>
+    <td>
+      <input name="tid" type="text" />
+    </td>
+    <td></td>
+  </tr>
+  <tr class="line3">
+    <td>
+      模板选择：
+    </td>
+    <td>
+      <select class="chooseGroup">
+        <option value="">请选择..</option>
+        {{#each this}}
+          <option value="{{this.groupID}}" data-child="{{json this.children}}">{{this.groupName}}</option>
+        {{/each}}
+      </select>
+    </td>
+    <td>
+      <select name="coms" class="choosetemplates">
+        <option value="">请选择...</option>
+      </select>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>

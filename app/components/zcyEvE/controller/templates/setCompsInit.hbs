@@ -1,0 +1,57 @@
+<div class="base-modal" data-path="{{this.path}}">
+  <div class="editor-config-panel">
+    <div class="editor-config-panel-container">
+      <ul class="editor-config-parts">
+
+      </ul>
+      <ul>
+        {{#equals (size this.ruleList) 0}}
+          <li class="docomps-line">
+            <label>
+              <span>生效区划：</span><input type="text" name="doCode" />
+            </label>
+            <label>
+              <span>例外区划：</span><input type="text" name="unlessCode" />
+            </label>
+            <label>
+              <span>生效大厅：</span><input type="text" name="doHall" />
+            </label>
+            <label>
+              <span>例外大厅：</span><input type="text" name="unlessHall" />
+            </label>
+            <label>
+              <span>生效页面：</span><input type="text" name="doPage" />
+            </label>
+            <a class="docomps-addRule">增加规则</a>
+            <a class="docomps-delRule">删除规则</a>
+            <a class="docomps-saveRule">保存规则</a>
+            <a class="docomps-viewRule">查看配置</a>
+          </li>
+        {{/equals}}
+        {{#each this.ruleList}}
+          <li class="docomps-line" data-data="{{json this.data}}">
+            <label>
+              <span>生效区划：</span><input type="text" name="doCode" value="{{this.rule.doCode}}" />
+            </label>
+            <label>
+              <span>例外区划：</span><input type="text" name="unlessCode" value="{{this.rule.unlessCode}}" />
+            </label>
+            <label>
+              <span>生效大厅：</span><input type="text" name="doHall" value="{{this.rule.doHall}}" />
+            </label>
+            <label>
+              <span>例外大厅：</span><input type="text" name="unlessHall" value="{{this.rule.unlessHall}}" />
+            </label>
+            <label>
+              <span>生效页面：</span><input type="text" name="doPage" value="{{this.rule.doPage}}" />
+            </label>
+            <a class="docomps-addRule">增加规则</a>
+            <a class="docomps-delRule">删除规则</a>
+            <a class="docomps-saveRule">保存规则</a>
+            <a class="docomps-viewRule">查看配置</a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

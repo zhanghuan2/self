@@ -1,0 +1,40 @@
+.eve-title {
+  .floor-header {
+    font-size: 26px;
+    line-height: 26px;
+    .floor-info {
+      img {
+        width: 114px;
+        height: 32px;
+      }
+      img[src=""],img:not([src]){
+        display:none;
+      }
+      .sub-title {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 25px;
+        color: #BBBBBB;
+        text-align: center;
+        margin: 0 0 4px 1px;
+      }
+      .link-more {
+        float: right;
+        font-size: 14px;
+        line-height: 20px;
+        color: #999999;
+        letter-spacing: 0;
+        text-align: right;
+        margin-top: 10px;
+        &:hover {
+          color: #197AFF;
+        }
+        i {
+          font-size: 12px;
+          vertical-align: middle;
+          margin-left: -1px;
+        }
+      }
+    }
+  }
+}

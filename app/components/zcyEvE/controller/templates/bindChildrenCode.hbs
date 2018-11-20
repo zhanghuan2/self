@@ -1,0 +1,42 @@
+<div class="modal-dialog">
+  <div>
+    <label>
+      自定义绑定区划：<input type="radio" class="selfBind" name="ifself" checked value="index0">
+    </label>
+    <label>
+      默认绑定区划：<input type="radio" name="ifself" value="index1">
+    </label>
+
+  </div>
+  <div class="sites-new index0 slefbox">
+    <div class="control-group success">
+      <label for="name"><span class="required">*</span>模板:</label>
+      <select name="layout" required="" class="ign-cls">
+        <option value="PC-DEFAULT@PC">默认 PC 端模板</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="sites-name"><span class="required">*</span>站点名称:</label>
+      <input id="sites-id" name="name" type="text" placeholder="请输入站点名称" value="" required="">
+    </div>
+    <div class="control-group">
+      <label for="sites-name"><span class="required">*</span>区划:</label>
+      <input id="sites-id" name="discode" type="text" placeholder="请输入站点名称" value="" required="">
+    </div>
+    <div class="control-group">
+      <label for="name"><span class="required">*</span>域名:</label>
+      <input id="site-domain" name="domain" type="text" placeholder="请输入站点域名" value="" required="">
+    </div>
+  </div>
+  <div class="sites-new index1 hide slefbox">
+    <div class="control-group">
+      <label for="sites-name"><span class="required">*</span>站点名称:</label>
+      <input id="sites-id" name="name" type="text" placeholder="请输入站点名称" value="" required="">
+    </div>
+    <div class="control-group">
+      <label for="name"><span class="required">*</span>区划:</label>
+      <input id="codeList" name="discode" type="text" placeholder="请输入区划列表" value="" required="">
+      <input name="type" class="hide" type="text" placeholder="请输入区划列表" value="default" required="">
+    </div>
+  </div>
+</div>

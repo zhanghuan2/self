@@ -1,0 +1,100 @@
+{{#component "ZCY-eevee-page-controller js-comp"}}
+  <div class="choose-page">
+    <div class="net-eevees eevee-block-btn">
+      <h2>网超装修入口</h2>
+      <h6>E-supermarket Build</h6>
+      <button>立即进入</button>
+    </div>
+    <div class="webs-eevees eevee-block-btn">
+      <h2>网站集群装修入口</h2>
+      <h6>Web Phalanx Build</h6>
+      <button>立即进入</button>
+    </div>
+    <br/>
+    <div class="template-create eevee-block-btn">
+      <h2>模板创建入口</h2>
+      <h6>Create templates</h6>
+      <button>立即进入</button>
+    </div>
+    <div class="items-shop eevee-block-btn">
+      <h2>店铺装修入口</h2>
+      <h6>Items shop</h6>
+      <button>立即进入</button>
+    </div>
+  </div>
+  <div class="choose-url-list hide">
+    <div class="component-header">
+      <span class="component-title">站点管理</span>
+      <button class="btn btn-primary btn-medium js-sites-new pull-right" style="padding: 10px">创建站点</button>
+    </div>
+    <div class="component-body">
+      <table>
+        <thead>
+        <tr>
+          <th width="30px"></th>
+          <th width="25%">站点名称</th>
+          <th width="">域名</th>
+          <th width="15%">区划</th>
+          <th width="30%" class="td-operation">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="ZCY-eevee-page-controller-content hide">
+    <div class="body-content" style="overflow-x: scroll">
+      <div class="editor-menu">
+        <div class="editor-menu-container">
+
+          <ul class="editor-menu-control">
+            <li class="currentPage">
+              当前页面：<b>search</b>
+            </li>
+            <li>
+              <button class="js-page-release">&nbsp;发布</button>
+            </li>
+            <li>
+              <button class="js-page-save">&nbsp;保存</button>
+            </li>
+            <li>
+              <button class="js-page-show">&nbsp;页面</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="ZCY-eevee-row-page" id="rowPage" data-json="{{json this._DATA_}}">
+        <div class="hide">{{json _DATA_.templateJson}}</div>
+        {{#each this._DATA_.templateJson}}
+          <div class="eevee-clu-line-index{{@index}} eevee-grids" data-index="{{@index}}" style="{{#each this.css}}{{@key}}:{{this}};{{/each}}">
+            <div class="eevee-col-row" style="{{#each this.insert.css}}{{@key}}:{{this}};{{/each}}">
+              {{#each this.insert.comps}}
+                <div class="eevee-col-box" style="{{#each this.css}}{{@key}}:{{this}};{{/each}}" data-json="{{json this}}" data-compath="{{this.path}}" data-name="{{this.name}}">
+                  {{inject this.path _BDATA_=this.data _PDATA_=../../_DATA_ shopId=@root.shopId}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="page-list-container">
+      <div class="left-menu inline-block">
+        <ul class="menu-li">
+          <li class="active">网超</li>
+          <li>医疗馆</li>
+          <li>疫苗馆</li>
+          <li class="addLi">➕</li>
+        </ul>
+      </div>
+      <div class="side-content inline-block">
+
+      </div>
+    </div>
+    <div class="comps-set">
+
+    </div>
+  </div>
+{{/component}}

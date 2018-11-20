@@ -1,0 +1,63 @@
+{{#component "ZCY-eevee-page-controller js-comp"}}
+  <div class="ZCY-eevee-page-controller-content">
+    <div class="body-content" style="overflow-x: scroll">
+      <div class="editor-menu">
+        <div class="editor-menu-container">
+           <span class="edit-op hide" style="display: inline-block;
+                        height: 40px;
+                        float: left;padding-top: 5px;
+                        font-size: 20px;">
+            当前页面：<b class="currentPage"></b>
+          </span>
+          <ul class="editor-menu-control" style="display: inline-block;float: right">
+            <li class="currentPage">
+
+            </li>
+            <li>
+              <button class="js-save-page hide-btn">&nbsp;保存操作</button>
+            </li>
+            <li>
+              <button class="js-page-addGroup hide-btn">&nbsp;新增模板组</button>
+            </li>
+            <li>
+              <button class="js-page-show edit-op hide">&nbsp;页面</button>
+            </li>
+            <li>
+              <button class="js-template-save edit-op hide">&nbsp;保存模板</button>
+            </li>
+            <li>
+              <button class="js-cancel-edit edit-op hide">&nbsp;取消编辑</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="ZCY-eevee-row-page hide edit-op" id="rowPage">
+
+        <!--<div class="page-grid-row"></div>-->
+      </div>
+      <div class="ZCY-template-box hide-btn">
+
+      </div>
+    </div>
+    <div class="page-list-container edit-op">
+      <div class="left-menu inline-block">
+        <ul class="menu-li">
+          <li class="addAllComps active">增加组件</li>
+          <li class="settingComps">设置组件</li>
+        </ul>
+      </div>
+      <div class="side-content inline-block">
+        <div class="compsSet tabSwitch">
+
+        </div>
+        <div class="comps-set tabSwitch hide">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="review ZCY-eevee-page-body hide">
+
+  </div>
+
+{{/component}}

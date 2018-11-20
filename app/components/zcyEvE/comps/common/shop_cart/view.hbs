@@ -1,0 +1,31 @@
+{{#component 'shop-cart evees-comp js-comp'}}
+    <input class="count-query-url" value="{{queryCountUrl}}" type="hidden">
+    <input class="shop-cart-tags" value="{{json _TAGS_}}" type="hidden">
+    <a
+      {{#if _USER_}}
+        {{#if defaultLink}}
+        href="/{{defaultLink}}"
+        {{else}}
+          {{#equals _TAGS_.blocktrade 1}}
+        href="/carts/supperProCart"
+          {{else equals _TAGS_.vaccine 1}}
+        href="/cart?tag=vaccine"
+          {{else}}
+        href="/cart"
+          {{/equals}}
+        {{/if}}
+      {{else}}
+        href="/login"
+      {{/if}}
+        >
+      <div class="js-goto-mycart">
+        <i class="icon-zcy icon-gouwuche1 pull-left" style="margin-top: -4px;"></i>
+        <span class="font-14">购物车</span>
+        {{#if _USER_}}
+          <strong id="js-cart-count">0</strong>
+        {{/if}}
+      </div>
+    </a>
+{{/component}}
+
+

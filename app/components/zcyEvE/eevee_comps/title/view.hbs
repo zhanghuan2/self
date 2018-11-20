@@ -1,0 +1,12 @@
+{{#component "eve-title evees-comp js-comp"}}
+  <div class="floor-header">
+    <div class="floor-info">
+      <img src="{{#if _EEVEES_.image}}{{_EEVEES_.image}}{{else}}http://demo-item.img-cn-hangzhou.aliyuncs.com//2018071614532270617148.png{{/if}}" alt="热销供应商">
+      <span class="sub-title">{{#if _EEVEES_.title}}{{_EEVEES_.title}}{{else}}热销供应商{{/if}}</span>
+      <a class="link-more {{#equals _EEVEES_.showMore 0}}hide{{/equals}}" href="http://www.test.cai-inc.com/pages/suppliers">查看更多
+        <i class="icon-zcy icon-jiantou-you"></i>
+      </a>
+    </div>
+    <div class="floor-extend"></div>
+  </div>
+{{/component}}

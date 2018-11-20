@@ -1,0 +1,96 @@
+{{#component "js-comp common-app-nav evees-comp"}}
+  <div class="hide dataStore" data-json="{{json this}}">{{json this}}</div>
+  <div class="nav-container eevee-theme-bg">
+    {{#equals _EEVEES_.type 0}}
+    {{#each _EEVEES_.selfTagArr}}
+      {{#if this.children}}
+        <div class="dropdown-select app2 txspgnew" {{#equals isHideLink2 "1"}}style="display:none;"{{/equals}}>
+          <span>{{tagName}}<i class="icon-zcy"></i></span>
+          <div class="select-box">
+            {{#each this.children}}
+              <a href="https://jy.zcy.gov.cn" target="_blank">{{tagName}}</a>
+            {{/each}}
+          </div>
+        </div>
+        {{else}}
+        <div class="app-box {{#equals active true}}active{{/equals}}">
+          <span><a href="{{#if url}}{{url}}{{else}}/{{/if}}">{{tagName}}</a></span>
+        </div>
+      {{/if}}
+    {{/each}}
+      {{else}}
+      {{#each _DATA_}}
+        {{#of name "网上超市,协议供货,定点服务,在线询价,反向竞价"}}
+        <div class="app-box {{#equals name "网上超市"}}active{{/equals}}">
+          <span><a href="{{#if url}}{{url}}{{else}}/{{/if}}">{{name}}</a></span>
+        </div>
+          {{/of}}
+      {{/each}}
+    <div class="app-box app1" {{#equals isHideLink1 "1"}}style="display:none;"{{/equals}}>
+      <span><a href="{{#if href0}}{{href0}}{{else}}https://zhizao.zcy.gov.cn/{{/if}}">制造精品馆</a></span>
+    </div>
+    <div class="dropdown-select app2 txspgnew" {{#equals isHideLink2 "1"}}style="display:none;"{{/equals}}>
+      <span>特许商品馆<i class="icon-zcy"></i></span>
+      <div class="select-box eevee-theme-bg eevee-theme-border">
+        {{#if _USER_}}
+          {{#of _USER_.currentCategory "99,12,01,03,06"}}
+            {{#equals _USER_.currentCategory "01"}}
+              {{#of _USER_.detailCategory "010401,010402,010403"}}
+                <a href="{{#if href1}}{{href1}}{{else}}/{{/if}}"
+                  {{#if newPage}}target="_blank"{{/if}}>疫苗馆</a>
+              {{else}}
+                <a href="https://vaccine.zcy.gov.cn/pages/no_permission"
+                  {{#if newPage}}target="_blank"{{/if}}>疫苗馆</a>
+              {{/of}}
+            {{else}}
+              <a href="{{#if href1}}{{href1}}{{else}}/{{/if}}"
+                {{#if newPage}}target="_blank"{{/if}}>疫苗馆</a>
+            {{/equals}}
+          {{else}}
+            <a href="{{#if vaccineNoPermissionHref}}{{vaccineNoPermissionHref}}{{else}}https://vaccine.zcy.gov.cn/pages/no_permission{{/if}}"
+              {{#if newPage}}target="_blank"{{/if}}>疫苗馆</a>
+          {{/of}}
+
+          {{#equals _APP_INFO_ true}}
+            <a href="{{#if href2}}{{href2}}{{else}}https://block.zcy.gov.cn/supperPro{{/if}}"
+              {{#if newPage}}target="_blank"{{/if}} style="font-size: {{fontSize}}px;">大宗商品</a>
+          {{else}}
+            <a href="{{#if blocktradeNoPermissionHref}}{{blocktradeNoPermissionHref}}{{else}}https://block.zcy.gov.cn/pages/no_permission{{/if}}"
+              {{#if newPage}}target="_blank"{{/if}}>大宗商品</a>
+          {{/equals}}
+
+        {{else}}
+          <a href="{{#if vaccineNoPermissionHref}}{{vaccineNoPermissionHref}}{{else}}https://vaccine.zcy.gov.cn/pages/no_permission{{/if}}"
+            {{#if newPage}}target="_blank"{{/if}}>疫苗馆</a>
+          <a href="{{#if blocktradeNoPermissionHref}}{{blocktradeNoPermissionHref}}{{else}}https://block.zcy.gov.cn/pages/no_permission{{/if}}"
+            {{#if newPage}}target="_blank"{{/if}}>大宗商品</a>
+        {{/if}}
+
+        {{#each extraSites}}
+          <a href="{{siteUrl}}" {{#if ../newPage}}target="_blank"{{/if}}>{{siteName}}</a>
+        {{/each}}
+
+        {{#if _USER_}}
+          <a href="https://medical.zcy.gov.cn/medical/index" target="_blank">医疗馆</a>
+        {{else}}
+          <a href="https://medical.zcy.gov.cn/medical/login">医疗馆</a>
+        {{/if}}
+
+        {{#if _USER_}}
+          {{#if _USER_.isPolice}}
+              <a href="https://jy.zcy.gov.cn" target="_blank">警用装备</a>
+          {{else}}
+                <a href="{{#if polictradeNoPermissionHref}}{{polictradeNoPermissionHref}}{{else}}https://jy.zcy.gov.cn/pages/no_permission{{/if}}">警用装备</a>
+          {{/if}}
+        {{else}}
+          <a href="{{#if polictradeNologinPermissionHref}}{{polictradeNologinPermissionHref}}{{else}}https://jy.zcy.gov.cn/pages/nologin_permission{{/if}}">警用装备</a>
+        {{/if}}
+      </div>
+    </div>
+    <div class="app-box app3" {{#equals isHideLink3 "1"}}style="display:none;"{{/equals}}>
+      <span><a href="{{#if href3}}{{href3}}{{else}}https://intentlist.zcy.gov.cn/procurement/supplier?tag=notice{{/if}}">求购信息</a></span>
+    </div>
+    {{/equals}}
+  </div>
+
+{{/component}}

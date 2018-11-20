@@ -1,0 +1,63 @@
+{{#if this.services}}
+   {{#each this.services}}
+     <div class="server-group">
+       <ul class="comps-line-ul zcy-eevees-normal-div">
+         <li class="comps-line-li">
+           <div class="comps-line-title">接口KEY：</div>
+           <div class="comps-line-ele">
+             <input type="text" name="returnKey" value="{{this.returnKey}}" class="text-input-w100 zcy-eevees-input">
+           </div>
+         </li>
+         <li class="comps-line-li">
+           <div class="comps-line-title">接口类型：</div>
+           <div class="comps-line-ele">
+             <select class="zcy-eevees-input" data-keys="type" name="type" value="{{this.type}}">
+               <option value="DUBBO">DUBBO</option>
+               <option value="spring">spring</option>
+               <option value="post">http|post</option>
+               <option value="get">http|get</option>
+             </select>
+           </div>
+         </li>
+         <li class="comps-line-li">
+           <div class="comps-line-title">接口地址：</div>
+           <div class="comps-line-ele">
+             <input type="text" name="uri"  value="{{this.uri}}" class="text-input-w100 zcy-eevees-input">
+           </div>
+         </li>
+       </ul>
+
+     </div>
+
+   {{/each}}
+  {{else}}
+  <div class="server-group">
+    <ul class="comps-line-ul zcy-eevees-normal-div">
+      <li class="comps-line-li">
+        <div class="comps-line-title">接口KEY：</div>
+        <div class="comps-line-ele">
+          <input type="text" name="returnKey" value="" class="text-input-w100 zcy-eevees-input">
+        </div>
+      </li>
+      <li class="comps-line-li">
+        <div class="comps-line-title">接口类型：</div>
+        <div class="comps-line-ele">
+          <select class="zcy-eevees-input" data-keys="type" name="type">
+            <option value="DUBBO">DUBBO</option>
+            <option value="spring">spring</option>
+            <option value="post">http|post</option>
+            <option value="get">http|get</option>
+          </select>
+        </div>
+      </li>
+      <li class="comps-line-li">
+        <div class="comps-line-title">接口地址：</div>
+        <div class="comps-line-ele">
+          <input type="text" name="uri" value="" class="text-input-w100 zcy-eevees-input">
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+{{/if}}

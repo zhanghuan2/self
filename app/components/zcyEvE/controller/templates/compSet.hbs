@@ -1,0 +1,145 @@
+{{#equals type 'line'}}
+  <div class="editor-config-panel">
+    <h1>操作</h1>
+    <div class="right-button">
+      <button class="btn btn-primary btn-medium deleLine">删除选中行</button><br/><br/>
+      <button class="btn btn-primary btn-medium addRow after">增加外联行</button><br/><br/>
+      <button class="btn btn-primary btn-medium addRow insideRow after">增加内联行</button><br/><br/>
+      <button class="btn btn-primary btn-medium textaline">居中</button>
+    </div>
+    <div class="line-edit-box">
+      <div class="field-group" data-description="上边框">
+        <span class="field-group-label">上边框:</span>
+        <span class="field-group-content">
+          <label>
+            <input type="text" name="borderTop" value="{{this.css.borderTop}}" class="form-control">
+          </label>
+          <label>
+            绑定主题色：
+            <input type="checkbox" name="borderTop|theme">
+          </label>
+
+        </span>
+      </div>
+      <div class="field-group" data-description="下边框">
+        <span class="field-group-label">下边框:</span>
+        <span class="field-group-content">
+          <label>
+            <input type="text" name="borderBottom" value="{{this.css.borderBottom}}" class="form-control">
+          </label>
+          <label>
+            绑定主题色：
+            <input type="checkbox" name="borderBottom|theme">
+          </label>
+        </span>
+      </div>
+      <div class="field-group" data-description="背景色">
+        <span class="field-group-label">背景色:</span>
+        <span class="field-group-content">
+          <label>
+            <input type="text" name="background" value="{{this.css.background}}" class="form-control">
+          </label>
+          <label>
+            绑定主题色：
+            <input type="checkbox" name="background|theme">
+          </label>
+        </span>
+      </div>
+      <div class="field-group" data-description="内边距">
+        <span class="field-group-label">内边距:</span>
+        <span class="field-group-content">
+          <label>
+            <input type="text" name="padding" value="{{this.css.padding}}" class="form-control">
+          </label>
+        </span>
+      </div>
+    </div>
+    <a class="savelineForm all">生效</a>
+  </div>
+  {{else}}
+  <div class="editor-config-panel">
+    <div class="editor-config-panel-container">
+      <ul class="editor-config-parts">
+        <li class="baseSet">
+          <h6>组件ID-{{this.comkey}}</h6>
+          <h2>基础样式设置</h2>
+          <div class="field-group" data-description="组件宽度，单位像素">
+            <span class="field-group-label">宽度:</span>
+            <span class="field-group-content">
+              <label>
+                <input type="text" name="width" value="{{this.width}}" class="small setStyleWidth">
+              </label>
+            </span>
+          </div>
+          <div class="field-group" data-description="组件高度，单位像素">
+            <span class="field-group-label">高度:</span>
+            <span class="field-group-content">
+              <label>
+                <input type="text" name="height" value="{{this.height}}" class="small setStyleHeight" />
+              </label>
+            </span>
+          </div>
+          <div class="field-group" data-description="组件对齐方式">
+            <span class="field-group-label">组件对齐方式:</span>
+            <span class="field-group-content">
+              <label>
+                <input type="radio" name="textAlign" checked value="left" class="small setStyleHeight" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="textAlign"  value="center" class="small setStyleHeight" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="textAlign" value="right" class="small setStyleHeight" />
+              </label>
+            </span>
+          </div>
+        </li>
+        <li>
+          <form action="" class="cssform" data-scope="base">
+            <h2>基础设置</h2>
+            {{#each this.css}}
+              <div class="field-group" data-description="{{description}}" data-name="{{name}}">
+                <span class="field-group-label">{{label}}:</span>
+                <span class="field-group-content">
+                  <label>
+                    {{#equals this.type 'text'}}
+                      <input type="text" name="{{name}}" value="{{defaultValue}}" class="small setdom">
+                    {{/equals}}
+                  </label>
+                </span>
+              </div>
+            {{/each}}
+          </form>
+        </li>
+        <li>
+          <form action="" class="dataform" data-scope="ext">
+            <h2>参数设置</h2>
+            {{#each this.data}}
+              <div class="field-group" data-description="{{description}}" data-name="{{name}}">
+                <span class="field-group-label">{{label}}:</span>
+                <span class="field-group-content">
+                  {{#equals this.type 'text'}}
+                    <label><input type="text" name="{{name}}" value="{{defaultValue}}" class="small setdom"></label>
+                  {{/equals}}
+                  {{#equals this.type 'radio'}}
+                    {{#each this.options}}
+                    <label><input class="setdom" type="radio" name="{{../name}}" value="{{@key}}" {{#equals @key ../defaultValue}}checked{{/equals}}>{{this}}</label>
+                    {{/each}}
+                  {{/equals}}
+                  {{#equals this.type 'addBox'}}
+                    <label><input type="text" name="{{name}}" value="{{defaultValue}}" class="small setdom compset-addBox" data-connect="{{json this.connect}}"></label>
+                    <div class="compset-addBox-content">
+
+                    </div>
+                  {{/equals}}
+                  {{#equals this.type 'upload'}}
+                    <div class="upload-box js-invoice-image"></div>
+                  {{/equals}}
+                </span>
+              </div>
+            {{/each}}
+          </form>
+        </li>
+        <li>
+          <a class="saveCfgForm all">生效</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{{/equals}}

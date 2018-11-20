@@ -1,0 +1,23 @@
+<div class="small-cart">
+  <p style="padding-left:10px;text-align:left;">购物车中的商品：</p>
+  {{#if data}}
+  <ul>
+    {{#each data}}
+    {{#each cartItems}}
+    <li style="float:left;overflow:hidden;height:auto;">
+      <div class="mini-img" style="float:left;vertical-align: top;"><img src="{{itemImage}}" alt=""></div>
+      <div class="mini-info" style="float:left;vertical-align: top;">
+        <p><a href="/items/{{sku.itemId}}">{{itemName}}</a></p>
+      </div>
+      <div class="mini-price" style="float:left;vertical-align: top;">
+        <p>{{_CURRENCY_}}<span class="currency">{{formatPrice sku.price}}</span></p>
+        <p><a href="javascript:void(0)" class="font-black">{{i18n "Delete" bundle="all_mix"}}</a></p>
+      </div>
+    </li>
+    {{/each}}
+    {{/each}}
+  </ul>
+  {{else}}
+  <p>您的购物车中还没有商品。</p>
+  {{/if}}
+</div>

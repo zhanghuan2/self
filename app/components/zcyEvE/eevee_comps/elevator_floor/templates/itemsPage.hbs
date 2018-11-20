@@ -1,0 +1,22 @@
+<div class="item-page index-{{this.pageIndex}}">
+    <ol class="products-list clearfix">
+        {{#each this.pageList}} 
+        <li class="product-item clearfix">
+            <a href="/items/{{id}}?searchType=1">
+                <div class="product-image">
+                    <img src="{{templateCdnPath mainImage '187' '0'}}" alt="">
+                </div>
+            </a>
+            <div class="product-info">
+                <p class="product-name">
+                    <a href="/items/{{id}}?searchType=1" title="{{name}}">{{name}}</a>
+                </p>
+                <p class="product-price">
+                    <span class="currency">￥{{formatPrice lowPrice 0}}</span>
+                    <span class="product-sale">销量 : {{#if saleQuantity}}{{saleQuantity}}{{else}}0{{/if}} {{extra.unit}}</span>
+                </p>
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+</div>

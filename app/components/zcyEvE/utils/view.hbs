@@ -1,0 +1,56 @@
+{{#component "ZCY-eevee-comps-main js-comp"}}
+  <p style="padding: 0 0 21px 0;">
+    <b class="comps-cfg" >
+
+    </b>
+    <b class="comps-ids" style="float:right">
+
+    </b>
+  </p>
+  <div class="comps-box" data-path="{{this.compsPath}}">
+    <div class="compsShow hide">
+      {{#insert this.compsPath}}
+        {}
+      {{/insert}}
+    </div>
+    <p class="noew-dicode page-show-part">
+      <b>区划个性化设置：</b>
+    </p>
+    <div class="compsDiscode page-show-part">
+      <table>
+        <thead>
+          <tr>
+            <th>区划</th>
+            <th>最近更新时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+      <div class="self-discode-btn-box self-discode-btn-add">
+        + 添加个性化配置
+      </div>
+    </div>
+    <div class="zcy-cfg-part2">
+      <div class="zcy-cfg-oprate-box">
+        <p class="new-discode">
+          <b class="action"></b>
+          <b class="location">默认</b>
+          <b>参数配置</b>
+        </p>
+        <div class="zcy-cfg-edit-code">
+          <div class="inline-block">区划：</div>
+          <div class="zcy-tree-cfg-tree inline-block"></div>
+        </div>
+      </div>
+      <div class="compsDo">
+
+      </div>
+    </div>
+
+
+
+  </div>
+{{/component}}

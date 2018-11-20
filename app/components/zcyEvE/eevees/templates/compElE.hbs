@@ -1,0 +1,18 @@
+{{#each this}}
+  <div class="field-group" data-description="{{description}}" data-name="{{name}}">
+    <span class="field-group-label">{{label}}:</span>
+    <span class="field-group-content">
+      {{#equals this.type 'text'}}
+        <label><input type="text" name="{{name}}" data-index="{{this.index}}" data-key="{{this.key}}" value="{{defaultValue}}" class="small setdom compset-addBox ignorename arrdata"></label>
+      {{/equals}}
+      {{#equals this.type 'radio'}}
+        {{#each this.options}}
+          <label><input class="setdom compset-addBox ignorename arrdata" data-index="{{this.index}}" data-key="{{this.key}}" type="radio" name="{{../name}}" value="{{@key}}" {{#equals @key ../defaultValue}}checked{{/equals}}>{{this}}</label>
+        {{/each}}
+      {{/equals}}
+      {{#equals this.type 'upload'}}
+        <div class="upload-box js-invoice-image ignorename arrdata" data-index="{{this.index}}" data-key="{{this.key}}" data-datatype="upload"></div>
+      {{/equals}}
+      </span>
+  </div>
+{{/each}}

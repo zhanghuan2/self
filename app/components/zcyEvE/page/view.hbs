@@ -1,0 +1,27 @@
+{{#component "ZCY-eevee-page-main ZCY-eevee-page-body js-comp"}}
+  <div class="hide">{{json this}}</div>
+  <div id="siteID" class="hide" data-siteid="{{this._SITE_ID_}}"></div>
+  {{#each this.templateJson}}
+    <div class="{{#equals this.type 'col'}}eevee-clu-line{{else}}eevee-col-box{{/equals}} eevee-grids eevee-line{{@index}} {{this.theme}}" data-index="{{@index}}" style="{{this.css}}">
+      {{#equals this.type 'col'}}
+      <div class="eevee-insert-row {{this.cls}}" style="{{this.childCss}}">
+      {{/equals}}
+      {{#each this.comps}}
+        <div class="eevee-line-row-box" style="{{this.css}}">
+          {{#each this.insert}}
+            <div class="eevee-line-row" data-compath="{{this.path}}">
+              <div class="eevee-row-ele" style="{{this.css}}" data-json="{{json this.data}}" data-comkey="{{this.comkey}}">
+                {{#inject this.path _EEVEES_=this.data._EEVEES_ _CSS_=this.data._CSS_ _SERVICES_=this.data._SERVICES_ _PARAMS_=this.data._PARAMS_ _DIST_CODE_=@root._DIST_CODE_ _INPUT_PARAMS_=@root._INPUT_PARAMS_}}
+                  {}
+                {{/inject}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/each}}
+      {{#equals this.type 'col'}}
+      </div>
+      {{/equals}}
+    </div>
+  {{/each}}
+{{/component}}

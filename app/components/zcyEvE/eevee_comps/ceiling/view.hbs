@@ -1,0 +1,69 @@
+{{#component "ceiling evees-comp js-comp"}}
+<div class="navbar navbar-top">
+    <div class="hide">{{json this}}</div>
+    <div class="navbar-collapse" style="width:1200px;" >
+    <div class="navbar-header">
+        <span class="home-page box"><i class="icon-zcy icon-zhandianguanli"></i>
+            <a href="https://www.zcy.gov.cn/" target="_blank" >首页</a >
+        </span>
+        {{#of 'districts' _EEVEES_.site}}
+        <span class="administrative-divisions box">
+          <a href="javascript:void(0)" class="js-switch-region">
+            <i class="icon-zcy icon-location"></i>
+            <span class="js-user-region-show user-region-show" data-user="{{_USER_}}" data-siteid={{_SITE_ID_}}></span >
+          </a>
+        </span>
+        {{/of}}
+        <span id="js-time"></span>，<span class="welcome-info">欢迎来到政采云！</span>
+        <span id="js-user-action"  data-police="http://jy.test.cai-inc.com"  data-front="{{_ENV_HREF_.front}}" data-ctaxccgp="{{_ENV_HREF_.ctaxccgp}}" data-middlehref="{{_ENV_HREF_.middle}}" data-hrefmain="{{_HREF_.main}}" data-supplier-href="{{_ENV_HREF_.supplier}}">
+            <span class="hasUserInfo" style="display: none">
+                <ul class="user-info">
+                    <li class="more-options">
+                        <span>
+                            <span id="js-user-name"></span>
+                            <i class="icon-zcy icon-xiangxiazhedie"></i>
+                        </span>
+                        <div class="select-box">
+                            <span>
+                                <a rel="nofollow" href="{{_ENV_HREF_.userCenter}}">
+                                    帐号信息
+                                </a>
+                            </span>
+                            <span>
+                                <a href="javascript:void(0);" id="js-ceiling-user-logout" class="hide logout-href">退出</a>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </span>
+            <span class="noUserInfo">
+            </span>
+        </span>
+    </div>
+    <ul class="navbar-right">
+        {{#of 'workspace' _EEVEES_.site}}
+      <li class="no-options"><a href="/login">我的工作台</a></li>
+        {{/of}}
+        {{#each _EEVEES_.items}}
+      <li class="more-options">
+            <span ><a target="_blank" {{#if href}}href="{{href}}"{{/if}} >{{tagName}}</a >  {{#if children}}
+              <i class="icon-zcy icon-xiangxiazhedie" ></i >{{/if}}</span >
+            {{#if children}}
+          <div class="select-box" style="width: 120px;">
+                {{#each children}}
+                  <span ><a target="_blank" href="{{href}}" >{{tagName}}</a ></span >
+                {{/each}}
+          </div>
+                  {{/if}}
+      </li>
+        {{/each}}
+        {{#of 'net' _EEVEES_.site}}
+          <li class="more-options" id="eeveeSite" data-site="{{json _EEVEES_.others}}">
+            <span >网站导航 <i class="icon-zcy icon-xiangxiazhedie" ></i ></span >
+          </li>
+        {{/of}}
+    </ul>
+    <div style="clear: both;"></div>
+  </div>
+</div>
+{{/component}}

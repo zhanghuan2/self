@@ -1,0 +1,26 @@
+render:
+  editorLayout: "/eevee/editor"
+  layouts:
+    "PC-DEFAULT":
+      type: "SITE"
+      root: "/"
+      name: "默认 PC 端模板"
+      desc: "默认主题的 PC 端模板"
+    "PC-SHOP":
+      type: "SHOP"
+      root: "/layouts/shop"
+      name: "默认 PC 端店铺模板"
+      desc: "默认主题的 PC 端模板"
+
+components:
+  "zcyEvE/page":  # component path
+    category: "ADMIN"
+    name: "新装修"
+    service: "findDecorateTemplate" # app:serviceKey
+
+  "zcyEvE/eevee_comps/nav_category":
+    category: "OFFICIAL"
+    name: "[首页改版]全部商品分类组件"
+    service: "findChildrenOf"
+
+hrefs: # 可选，所有出现在这个 hash 里的值都会以 _HREF_ 为 key 注入渲染上下文

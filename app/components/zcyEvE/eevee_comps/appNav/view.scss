@@ -1,0 +1,96 @@
+.common-app-nav{
+  position: relative;
+  font-family: "PingFangSC-Regular", "Microsoft YaHei", "微软雅黑";
+  .nav-container {
+    height: 42px;
+    background: #197AFF;
+    color: #fff;
+    .app-box, .dropdown-select {
+      display: inline-block;
+      margin-left: -3px;
+      &:first-child {
+        margin-left: 0;
+      }
+      span {
+        display: inline-block;
+        font-family: "PingFangSC-Medium", "Microsoft YaHei", "微软雅黑";
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+    .app-box {
+      padding: 10px 20px;
+      &:hover {
+        background: #1473F0;
+      }
+      &.active {
+        background: #03B0FF;
+      }
+      span {
+        line-height: 22px;
+        a {
+          color: #fff;
+        }
+      }
+    }
+    .dropdown-select {
+      width: 134px;
+      padding: 10px 0 10px 20px;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+        background: #1473F0;
+      }
+      span{
+        line-height: 21px;
+        i {
+          font-size: 13px;
+          font-weight: bold;
+          margin-left: -2px;
+        }
+        i:before{
+          content: "\e6c5";
+        }
+      }
+      .select-box{
+        display: none;
+        width: 134px;
+        position: absolute;
+        top: 41px;
+        left: 0;
+        padding: 6px 6px 0 6px;
+        z-index: 100;
+        opacity: 0.9;
+        background: #1473F0;
+        border: 1px solid #1473F0;
+        box-shadow: 0 0 4px 0 rgba(0,0,0,0.10);
+        a{
+          font-family: "PingFangSC-Medium", "Microsoft YaHei", "微软雅黑";
+          display: block;
+          letter-spacing: 0.4px;
+          line-height: 30px;
+          padding-left: 14px;
+          margin-bottom: 6px;
+          color: #fff;
+          font-size: 16px;
+          &:hover{
+            background: #358CFA;
+            border-radius: 2px;
+          }
+        }
+      }
+      &:hover .select-box{
+        display: block;
+      }
+      &:hover span{
+        i {
+          font-size: 15px;
+          margin: -2px 0 0 3px;
+        }
+        i:before{
+          content: "\e89e";
+        }
+      }
+    }
+  }
+}

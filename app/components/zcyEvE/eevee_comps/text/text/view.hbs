@@ -1,0 +1,10 @@
+{{#component "eevee-word-box evees-comp js-comp"}}
+  <span style="
+      color:{{#if _EEVEES_.color}}{{_EEVEES_.color}}{{else}}rgb(35, 68, 78){{/if}};
+      font-weight:{{#if _EEVEES_.weight}}{{_EEVEES_.weight}}{{else}}bolder{{/if}};
+      font-size:{{#if _EEVEES_.size}}{{_EEVEES_.size}}{{else}}20px{{/if}};
+      ">
+    {{#if _EEVEES_.text}}{{_EEVEES_.text}}{{else}}电子卖场{{/if}}
+  </span>
+{{/component}}
+

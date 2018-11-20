@@ -1,0 +1,7 @@
+services:
+  "getAppInfo":
+    uri: "cn.gov.zcy.web.service.HomePageAppService:getAppInfo"
+    type: SPRING
+  findChildrenOf:
+    type: SPRING
+    uri: "io.terminus.parana.cache.FrontCategoryCacher:findByIds"

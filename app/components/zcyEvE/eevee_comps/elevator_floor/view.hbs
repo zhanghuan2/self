@@ -1,0 +1,27 @@
+{{#component "elevator-floor-new js-comp evees-comp"}}
+  <div class="hide">{{json _DATA_}}</div>
+  <div class="floor-products" style="height:{{#if _EEVEES_.line}}{{ifCond _EEVEES_.line 310}}{{else}}620{{/if}}px">
+    <div class="item-list">
+      <ol class="products-list clearfix">
+        {{#each _DATA_.entities.data}}
+          <li class="product-item clearfix">
+            <a href="/items/{{id}}?searchType=1">
+              <div class="product-image">
+                <img src="{{mainImage}}" alt="">
+              </div>
+            </a>
+            <div class="product-info">
+              <p class="product-name">
+                <a href="/items/{{id}}?searchType=1" title="{{name}}">{{name}}</a>
+              </p>
+              <p class="product-price">
+                <span class="currency">￥{{formatPrice lowPrice 0}}</span>
+                <span class="product-sale">销量 : {{#if saleQuantity}}{{saleQuantity}}{{else}}0{{/if}} {{extra.unit}}</span>
+              </p>
+            </div>
+          </li>
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+{{/component}}

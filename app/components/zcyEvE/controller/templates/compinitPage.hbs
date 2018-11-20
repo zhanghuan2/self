@@ -1,0 +1,21 @@
+<div class="closeReview">X</div>
+<div class="zcy-comps-init-box">
+  <div class="zcy-comps-init-search"></div>
+  <div class="zcy-comps-init-content">
+    {{#each this}}
+      <h1>{{@key}}</h1>
+      <h3>{{this.msg}}</h3>
+      <ul>
+        {{#each this.include}}
+          <li class="review-comps">
+            <div class="review-comp-box">
+              {{#insertComps 'zcyEvE/comps/' this.path}}{{/insertComps}}
+            </div>
+            <h3 class="text-center">{{this.msg}}</h3>
+            <div class="mask" data-compath="zcyEvE/comps/{{this.path}}"></div>
+          </li>
+        {{/each}}
+      </ul>
+    {{/each}}
+  </div>
+</div>

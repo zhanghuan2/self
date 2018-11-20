@@ -1,0 +1,48 @@
+.component-page-bottom {
+  font-family: MicrosoftYaHei;
+  background: #f5f5f5;
+  width: 100%;
+  border-top: 1px solid #eee;
+  .container {
+    width: 1200px;
+    height: 191px;
+    margin: 0 auto;
+    padding: 31px 0;
+    border-bottom: 1px solid #eee;
+    a {
+      color: #666 !important;
+    }
+    ul {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 141px;
+      li {
+        line-height: 24px;
+        font-size: 12px;
+        color: #666;
+        &.title {
+          font-size: 16px;
+          color: #333;
+          margin-bottom: 8px;
+        }
+        &.hotline {
+          font-family: HelveticaNeue;
+          font-size: 20px;
+          color: #333;
+          margin-bottom: 2px;
+        }
+      }
+      &.last {
+        margin-right: 0;
+        float: right;
+        .title {
+          text-align: center;
+        }
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+}

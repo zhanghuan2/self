@@ -1,0 +1,143 @@
+{{#component "js-comp service-guarantee-new evees-comp"}}
+<div class="hide zcy-dataStore" data-json="{{json this}}">{{json this}}</div>
+<input type="text" class="hide env_member" value="{{_ENV_HREF_.member}}" /> 
+<input type="text" class="hide env_target" value="{{_HREF_.main}}" /> 
+<input type="text" class="hide not_login" value="{{#if _USER_.name}}{{else}}1{{/if}}" /> 
+<input type="text" class="hide env_supplier" value="{{_ENV_HREF_.supplier}}" />
+<div class="container-wrapper {{#if _USER_.name}}
+    {{#equals (size _DATA_) 0}}   
+      noDealt
+    {{else}}
+      qk-init-2 
+      {{#gt (size _DATA_) 3}}
+        qk-init-3 
+      {{else}}
+        qk-init-line1
+      {{/gt}}
+    {{/equals}}
+{{/if}}">
+  <div class="user-information" data-link="{{#if SellerEnrollLink}}{{SellerEnrollLink}}{{else}} https://middle.zcy.gov.cn/settle-front/#/registry{{/if}}" data-ctaxccgp="{{_ENV_HREF_.ctaxccgp}}">
+    <div class="user-welcome">
+      <div class="user-welcome-name" title="{{_USER_.name}}"> Hi , 
+        {{#if _USER_.name}} {{_USER_.name}} 
+          {{!-- {{#equals (size _DATA_) 0}} --}}
+          <p>欢迎您来到政采云</p>
+          {{!-- {{/equals}} --}} 
+        {{else}} 
+          {{#if _USER_.account}} 
+            {{_USER_.account}} 
+            {{!-- {{#equals (size _DATA_) 0}} --}}
+            <p>欢迎您来到政采云</p>
+            {{!-- {{/equals}} --}} 
+          {{else}}
+            <span class="time-tip"></span>
+            <p>欢迎您来到政采云</p>
+          {{/if}} 
+        {{/if}}
+      </div>
+      
+      {{#equals (size _DATA_) 0}} 
+        {{else}} 
+        {{#if _USER_.name}}
+          <div class="btn-submit user-btn eevee-theme-bg">用户中心</div>
+        {{/if}} 
+      {{/equals}}
+    </div>
+
+    {{#if _USER_}}
+      <div class="btn-submit qk-init-yhzx user-btn eevee-theme-bg">用户中心</div>
+    {{else}}
+      <div class="clearfix">
+        <div class="btn-submit js-login user-btn eevee-theme-bg">用户登录</div>
+        <div class="js-shop-located enroll-btn eevee-theme-normal-btn">商家入驻</div>
+      </div>
+    {{/if}}
+
+  </div>
+
+  {{#equals (size _DATA_) 0}} 
+  {{else}}
+  <div class="order-info {{#gt (size _DATA_) 4}} num6-container {{else}} num4-container {{/gt}}" data-order-info="{{json _DATA_}}">
+    <ul>
+      {{#each _DATA_}}
+      <li>
+        <a href="
+              {{#equals code "0101"}}{{../_HREF_.main}}/buyer/netsuper-orders?pageNo=1&status=3{{/equals}}
+              {{#equals code "0102"}}{{../_ENV_HREF_.middle}}/settlement/purchaser-manage{{/equals}}
+              {{#equals code "0103"}}{{../_ENV_HREF_.middle}}/settlement/invoice/purchaser/list?q=%7B%22state%22%3A%5B%22%E5%BE%85%E5%BC%80%E7%A5%A8%22%2C%22%E5%BC%82%E5%B8%B8%22%5D%7D#waitInvoice{{/equals}}
+              {{#equals code "0104"}}{{../_HREF_.main}}/buyer/requisitions?pageNo=1&status=1{{/equals}}
+              {{#equals code "0105"}}{{../_HREF_.main}}/buyer/netsuper-purchases{{/equals}}
+              {{#equals code "0106"}}{{../_ENV_HREF_.middle}}/settlement/purchaser-manage?q=%7B%22status%22%3A%5B%22%E5%BE%85%E5%AE%A1%E6%A0%B8%22%5D%7D#waitSubmitAudit{{/equals}}
+
+              {{#equals code "0201"}}{{../_HREF_.main}}/seller/orders?pageNo=1&status=0{{/equals}}
+              {{#equals code "0202"}}{{../_HREF_.main}}/seller/orders?pageNo=1&status=1{{/equals}}
+              {{#equals code "0203"}}{{../_ENV_HREF_.middle}}/settlement/invoice/supplier/list?q=%7B%22state%22%3A%5B%22%E5%BE%85%E5%BC%80%E7%A5%A8%22%5D%7D{{/equals}}
+              {{#equals code "0204"}}{{../_ENV_HREF_.middle}}/settlement/invoice/supplier/list?q=%7B%22state%22%3A%5B%22%E5%BE%85%E6%94%B6%E7%A5%A8%22%5D%7D{{/equals}}
+              {{#equals code "0205"}}{{../_ENV_HREF_.middle}}/settlement/supplier-manage?q=%7B%22status%22%3A%5B%22%E5%BE%85%E6%94%AF%E4%BB%98%22%2C%22%E6%94%AF%E4%BB%98%E4%B8%AD%22%2C%22%E5%BE%85%E6%94%AF%E4%BB%98%E5%8C%B9%E9%85%8D%22%5D%7D{{/equals}}
+
+            ">
+          <div class="count-box">{{#if backlogCount}}{{backlogCount}}{{else}}0{{/if}}</div>
+          <div class="type-box">
+            {{#equals code "0101"}}待收货{{/equals}} 
+            {{#equals code "0102"}}待结算{{/equals}} 
+            {{#equals code "0103"}}待开票{{/equals}} 
+            {{#equals code "0104"}}需求单审核{{/equals}} 
+            {{#equals code "0105"}}预购单审核{{/equals}} 
+            {{#equals code "0106"}}结算单审核{{/equals}}
+            
+            {{#equals code "0201"}}待接单{{/equals}} 
+            {{#equals code "0202"}}待发货{{/equals}} 
+            {{#equals code "0203"}}待开票{{/equals}}
+            {{#equals code "0204"}}待收票{{/equals}} 
+            {{#equals code "0205"}}待支付{{/equals}}
+          </div>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  {{/equals}}
+
+  <div class="service-location">
+    <ul class="service-ul js-advantage">
+      <li class="service-li {{#equals _EEVEES_.show1 0}}hide{{/equals}}">
+        <a href="{{#if serviceHref}}{{serviceHref}}{{else}}javascript:;{{/if}}"> 
+          <i class="icon-zcy icon-zhengpinbaozhang2 eevee-theme-icon"></i>
+          <div class="word-content">
+            <p>正品保障</p>
+            <p>资质严选 品质经审核</p>
+          </div>
+        </a>
+      </li>
+      <li class="service-li {{#equals _EEVEES_.show2 0}}hide{{/equals}}">
+        <a href="{{#if serviceHref}}{{serviceHref}}{{else}}javascript:;{{/if}}"> 
+          <i class="icon-zcy icon-jiageyouhui2 eevee-theme-icon"></i>
+          <div class="word-content">
+            <p>价格优惠</p>
+            <p>协议规定 符合优惠率</p>
+          </div>
+        </a>
+      </li>
+      <li class="service-li {{#equals _EEVEES_.show3 0}}hide{{/equals}}">
+        <a href="{{#if serviceHref}}{{serviceHref}}{{else}}javascript:;{{/if}}"> 
+          <i class="icon-zcy icon-shuangxiangxinyong2 eevee-theme-icon"></i>
+          <div class="word-content">
+            <p>双向信用</p>
+            <p>如实评价 信用共建</p>
+          </div>
+        </a>
+      </li>
+      <li class="service-li {{#equals _EEVEES_.show4 0}}hide{{/equals}}">
+        <a href="{{#if serviceHref}}{{serviceHref}}{{else}}javascript:;{{/if}}"> 
+          <i class="icon-zcy icon-shouhouwuyou2 eevee-theme-icon"></i>
+          <div class="word-content">
+            <p>售后无忧</p>
+            <p>交易保障 纠纷仲裁</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+{{/component}}

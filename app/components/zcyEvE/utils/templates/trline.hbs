@@ -1,0 +1,16 @@
+<tr class="{{#if hasdefault}}default-tr{{/if}}" data-codename="{{json this.nameArr}}" data-code="{{json this.codeArr}}" data-result="{{json this.result}}" data-id="{{this.id}}">
+  <td class="code-oprate-td">
+    {{#if hasdefault}}
+      默认数据
+      {{else}}
+      {{this.name}}
+    {{/if}}
+  </td>
+  <td>
+     {{this.time}}
+  </td>
+  <td>
+    <a class="default-code-edit">编辑</a>
+    <a class="default-code-delete">删除</a>
+  </td>
+</tr>

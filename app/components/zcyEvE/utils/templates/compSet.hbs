@@ -1,0 +1,114 @@
+<div class="comps-config-show">
+  <ul>
+    <li></li>
+    <li class="tabs-li">
+      <span data-index="0" class="active">业务参数设置</span>
+      <span data-index="1">样式设置</span>
+      <span data-index="2">接口设置</span>
+    </li>
+  </ul>
+  <div class="zcy-comps-content0 tabs-content" data-json="{{json this}}">
+    {{#each this.data}}
+      {{#equals this.type 'table'}}
+        <table class="zcy-eevees-table {{#if this.group}}comps-table-group{{/if}} comps-table-key-{{this.key}}" data-keys="{{this.key}}" data-group="{{arrChange this.group 0}}" data-groupv="{{this.group}}">
+          <thead>
+          {{#each this.thead}}
+            <th>
+              {{this}}
+            </th>
+          {{/each}}
+          </thead>
+          <tbody>
+          {{#each this.tbody}}
+            <tr class="trparent {{#equals this.type 'addLine'}}zcy-addline-tr{{/equals}}" data-json="{{json this}}">
+              {{#each this.td}}
+                <td {{#equals @index 0}}style="position: relative"{{/equals}}>
+                  {{#equals ../type 'addLine'}}
+                    <input type="text" name="_zcytabletrtype_"  value="addLine" class="hide zcy-eevees-input">
+                  {{/equals}}
+                  {{#equals @index 0}}<span class="add-icon-point hide add-icon-open">-</span>{{/equals}}
+                  {{#insert2 'zcyEvE/utils/templates/compElE'}}{{/insert2}}
+                </td>
+              {{/each}}
+              <td class="zcy-oprate-td">
+                <div class="hide">
+                  <span class="add-tr-btn">➕</span>
+                  <span class="del-tr-btn">－</span>
+                </div>
+              </td>
+            </tr>
+          {{/each}}
+
+          </tbody>
+        </table>
+      {{/equals}}
+      {{#equals this.type 'normal'}}
+        <ul class="comps-line-ul zcy-eevees-normal-div">
+          {{#each this.line}}
+            <li class="comps-line-li {{#if this.group}}comps-line-group{{/if}} comps-line-key-{{this.key}}" data-group="{{arrChange this.group 0}}" data-groupv="{{this.group}}" data-keys="{{this.key}}">
+              <div class="comps-line-title">{{this.label}}：</div>
+              <div class="comps-line-ele">
+                {{#insert2 'zcyEvE/utils/templates/compElE'}}{{/insert2}}
+              </div>
+              <div class="comps-line-warn">{{this.warn}}</div>
+            </li>
+          {{/each}}
+        </ul>
+      {{/equals}}
+    {{/each}}
+
+  </div>
+  <div class="hide zcy-comps-content1 tabs-content">
+    <ul class="comps-line-ul zcy-eevees-normal-div">
+      {{#each this.css}}
+        <li class="comps-line-li">
+          <div class="comps-line-title">{{this.label}}：</div>
+          <div class="comps-line-ele">
+            {{#insert2 'zcyEvE/utils/templates/compElE'}}{{/insert2}}
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="hide zcy-comps-content2 tabs-content">
+    <p class="server-btn">
+      <span class="addServer">添加接口</span>
+    </p>
+    <div class="server-box">
+      <div class="server-group">
+        <ul class="comps-line-ul zcy-eevees-normal-div">
+          <li class="comps-line-li">
+            <div class="comps-line-title">接口KEY：</div>
+            <div class="comps-line-ele">
+              <input type="text" name="returnKey" value="" class="text-input-w100 zcy-eevees-input">
+            </div>
+          </li>
+          <li class="comps-line-li">
+            <div class="comps-line-title">接口类型：</div>
+            <div class="comps-line-ele">
+              <select class="zcy-eevees-input" data-keys="type" name="type">
+                <option value="DUBBO">DUBBO</option>
+                <option value="spring">spring</option>
+                <option value="post">http|post</option>
+                <option value="get">http|get</option>
+              </select>
+            </div>
+          </li>
+          <li class="comps-line-li">
+            <div class="comps-line-title">接口地址：</div>
+            <div class="comps-line-ele">
+              <input type="text" name="uri" value="" class="text-input-w100 zcy-eevees-input">
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  {{#if this.allSite}}<p style="padding-bottom: 20px;">温馨提示：站点{{this.name}}业务参数为全局配置，业务参数默认在当前站点下所有页面、所有区划生效。</p>{{/if}}
+  <div style="text-align: center;">
+    <button class="btn-default btn-insure hide">预览</button>
+    <button class="btn-default btn-cfg-form-save">保存</button>
+    <button class="btn-default btn-cfg-form-cancel">取消</button>
+  </div>
+</div>

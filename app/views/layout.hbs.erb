@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+  <!-- Powered by Terminus.io -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.2">
+    <meta name="baidu-site-verification" content="H4CfHlHHeo" />
+    <meta property="og:type" content="政采云"/>
+    <meta property="og:image" content="http://zcyimg.dithub.com/logo-og.jpg"/>
+    <meta property="og:description" content="{{_SEO_DESCRIPTION_}}" />
+    {{#block "meta"}}
+      <title>{{#if _SEO_TITLE_}}政采云-{{_SEO_TITLE_}}{{else}}{{#block "title"}}{{/block}}{{/if}}</title>
+      <meta name="keywords" content="{{_SEO_KEYWORDS_}}">
+      <meta name="description" content="{{_SEO_DESCRIPTION_}}">
+    {{/block}}
+<!-- pokeball iconfont ,修改请找端点王凯凯 -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_446087_4o248vzvju6.css" />
+    <link href="https://sitecdn.zcy.gov.cn/zcy/desktop/media/img/favicon.ico" type="image/x-icon" rel="shortcut icon">
+      <!-- zcy 前台的iconfont，请修改这个链接 -->
+    <link rel="stylesheet" href="https://cdn.zcy.gov.cn/zcy-font/front-icon.css" />
+      <!-- 依赖进来的icon, 有需要请改mewtwo -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1456890595_0763497.css"  id="css-mewtwo-icons"/>
+      <!-- v1重构字体 -->
+    <link rel="stylesheet" href="//sitecdn.zcy.gov.cn/zcy-font/font_285582_x7fkwx60lbsrwwmi.css">
+    <link rel="stylesheet" href="/render-assets/styles/vendor.css">
+    <link rel="stylesheet" href="/render-assets/styles/app.css">
+    <link rel="stylesheet" href="https://cdn.zcy.gov.cn/zcy-font/react-icon.css">
+    
+  </head>
+  <body>
+    <div class="root-container">
+      {{#block "body"}}
+      {{/block}}
+    </div>
+    <script src="/render-assets/scripts/vendor.js"></script>
+    <script src="/render-assets/scripts/templates.js"></script>
+    <script src="/render-assets/scripts/app.js"></script>
+    <script src="https://cdn.zcy.gov.cn/zcy-font/react-icon.js"></script>
+    <script>require("app")()</script>
+  </body>
+</html>

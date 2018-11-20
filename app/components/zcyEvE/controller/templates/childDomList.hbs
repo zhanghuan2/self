@@ -1,0 +1,16 @@
+{{#each this}}
+  <ul data-domain="{{this.domain}}" data-type={{this.type}} data-discode="{{this.discode}}" data-pid="{{this.pid}}" data-id="{{this.id}}" data-name="{{this.name}}">
+    <li style="width: 25%">{{this.name}}</li>
+    <li style="width: 28%">{{#equals this.type 'default'}}{{this.pd}}{{else}}{{this.domain}}{{/equals}}</li>
+    <li style="width: 15%">{{this.discode}}</li>
+    <li style="width: 30%;text-align: center">
+      <a href="javascript:;" class="js-release-site">发布站点</a>&nbsp;
+    {{#equals this.type 'default'}}
+      {{else}}
+      <a href="javascript:;" class="startEevee childEevee" target="_blank">装修</a>
+      <a href="javascript:;" class="js-sites-config-edit">修改</a>
+    {{/equals}}
+      <a href="javascript:;" class="js-sites-delete">删除</a>&nbsp;
+    </li>
+  </ul>
+{{/each}}

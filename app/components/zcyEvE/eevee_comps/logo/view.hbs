@@ -1,0 +1,20 @@
+{{#component "eve-image evees-comp js-comp"}}
+  <div class="hide">{{json this}}</div>
+  {{#if _EEVEES_.href}}<a href="{{_EEVEES_.href}}" {{#equals _EEVEES_.blank "yes"}}target="_blank"{{/equals}}>{{/if}}
+    <img style="" alt="" src="{{#if _EEVEES_.src}}{{_EEVEES_.src}}{{else}}http://demo-item.img-cn-hangzhou.aliyuncs.com//2018081914192317191593.png{{/if}}">
+  {{#if href}}</a>{{/if}}
+  <div class="text-content">
+    <div class="logo-text" style="
+          font-weight:bolder;
+
+          font-size:18px;
+          color:#314058">
+      {{#if _EEVEES_.sitesName}}
+          {{_EEVEES_.sitesName}}
+          {{@root.path}}
+        {{else}}
+        电子卖场
+      {{/if}}
+    </div>
+  </div>
+{{/component}}

@@ -1,0 +1,18 @@
+{{#each this}}
+  <div class="ZCY-template-list" data-key="{{this.groupId}}" data-modal="{{json this}}" data-pname="{{this.groupName}}" data-dc="{{this.groupWord}}" data-id="{{this.id}}">
+    <h1>{{this.groupName}} -- <span style="font-size: 16px;color: #999;">{{this.groupWord}}</span><a class="delete-group">删除组</a><a class="add-template">新增模板</a></h1>
+    <ul>
+      {{#each this.children}}
+        <li data-id="{{this.id}}" data-page="{{this.page}}" data-json="{{json this}}" data-pid="{{../id}}" data-text="{{this.text}}">
+          <div class="review-comp-box"></div>
+          <div class="mask">
+            <button class="review-btn">预览</button>
+            <button class="edit-btn" data-id="{{this.page}}">编辑</button>
+          </div>
+          <h3 class="text-center">{{this.page}}</h3>
+          <h3 class="text-center">{{this.text}}</h3>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/each}}

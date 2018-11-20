@@ -1,0 +1,36 @@
+<ul class="zcy-tree-ul-box">
+  {{#each this}}
+    <li class="{{#if this.leaf}}zcy-tree-li-leaf {{else}}zcy-tree-li-parent zcy-tree-li-close{{/if}}">
+      <div class="zcy-tree-node {{#if this.leaf}}zcy-tree-leaf {{else}}zcy-tree-parent zcy-tree-close{{/if}}">
+        <input type="checkbox" data-id="{{this.id}}" data-code="{{this.code}}" data-level="1" data-name="{{this.name}}"/>
+        <span class="title" title="{{this.name}}">{{this.name}}</span>
+        <span class="zcy-tree-icons">-</span>
+      </div>
+      {{#if this.children}}
+        <ul {{#if this.leaf}}{{else}}data-length="{{size this.children}}"{{/if}}>
+          {{#each this.children}}
+            <li  class="{{#if this.leaf}}zcy-tree-li-leaf {{else}}zcy-tree-li-parent zcy-tree-li-close{{/if}}">
+              <div class="zcy-tree-node {{#if this.leaf}}zcy-tree-leaf {{else}}zcy-tree-parent zcy-tree-close{{/if}}">
+                <input type="checkbox" data-id="{{this.id}}" data-code="{{this.code}}" data-level="2" data-name="{{this.name}}"/>
+                <span class="title">{{this.name}}</span>
+                <span class="zcy-tree-icons">-</span>
+              </div>
+              {{#if this.children}}
+                <ul class="zcy-tree-ul" {{#if this.leaf}}{{else}}data-length="{{size this.children}}"{{/if}}>
+                {{#each this.children}}
+                    <li  class="{{#if this.leaf}}zcy-tree-li-leaf {{else}}zcy-tree-li-parent zcy-tree-li-close{{/if}}">
+                      <div class="zcy-tree-node {{#if this.leaf}}zcy-tree-leaf {{else}}zcy-tree-parent zcy-tree-close{{/if}}">
+                        <input type="checkbox" data-id="{{this.id}}" data-code="{{this.code}}" data-level="3" data-name="{{this.name}}"/>
+                        <span class="title">{{this.name}}</span>
+                      </div>
+                    </li>
+                {{/each}}
+                </ul>
+              {{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

@@ -1,0 +1,77 @@
+{{#equals this.type 'text'}}
+  <input type="text" name="{{key}}"  value="{{defaultValue}}" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}} class="text-input-w100 zcy-eevees-input w-400">
+{{/equals}}
+{{#equals this.type 'textarea'}}
+  <textarea name="{{key}}" class="text-input-w100 zcy-eevees-input" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}}>
+    {{defaultValue}}
+  </textarea>
+{{/equals}}
+{{#equals this.type 'match'}}
+  <div class="zcy-eevees-match zcy-eevees-input" data-value="{{defaultValue}}" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}}>
+    <input type="text" name="{{key}}"  value="{{defaultValue}}" class="text-input-w100 zcy-eevees-input">
+    <div class="zcy-eevees-choose"></div>
+  </div>
+{{/equals}}
+{{#equals this.type 'radio'}}
+  <div class="zcy-eevees-input zcy-eevees-radio" data-keys="{{key}}" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}}>
+    {{#each this.options}}
+      <label><input class="zcy-eevees-radio"  type="radio" name="{{../key}}" value="{{this.value}}" {{#equals this.value ../defaultValue}}checked{{/equals}}>&nbsp;{{this.name}}&nbsp;</label>
+    {{/each}}
+  </div>
+{{/equals}}
+{{#equals this.type 'checkbox'}}
+  <div class="zcy-eevees-input zcy-eevees-checkbox" data-keys="{{key}}" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}}>
+    {{#each this.options}}
+      <label><input class="zcy-eevees-checkbox"  type="checkbox" name="{{../key}}" value="{{this.value}}" {{#of this.value ../defaultValue}}checked{{/of}}>&nbsp;{{this.name}}&nbsp;</label>
+    {{/each}}
+  </div>
+{{/equals}}
+{{#equals this.type 'upload'}}
+  <div class="upload-box zcy-eevees-input" data-datatype="upload" data-keys="{{key}}" data-files="{{defaultValue}}" ></div>
+{{/equals}}
+{{#equals this.type 'color'}}
+  <input type="text" name="{{key}}" value="{{defaultValue}}" class="text-input-color zcy-eevees-input" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}}>
+  <span class="bgcolor-span" style="background: {{defaultValue}}"></span>
+{{/equals}}
+{{#equals this.type 'switch'}}
+  <div class="switch zcy-eevees-switch zcy-eevees-input" data-keys="{{key}}" data-on="{{this.options.[0].value}}" data-off="{{this.options.[1].value}}" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}}>
+    <input class="switch-input" type="checkbox" data-size="mini" data-on-color="success" data-on-text="{{this.options.[0].name}}" data-off-text="{{this.options.[1].name}}"
+      {{#equals this.options.[0].value this.defaultValue}}checked{{/equals}} />
+  </div>
+{{/equals}}
+{{#equals this.type 'tags'}}
+  <div class="tags-boxs zcy-eevees-tags zcy-eevees-input" data-keys="{{key}}" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}}>
+    <div class="inline-block tag-add-box">
+      {{#if defaultValue}}
+        {{#each (toArr defaultValue)}}
+          <span class="tag-all-content-box">
+            <span class="tags-content">{{this}}</span>
+            <span class="tags-delete">x</span>
+          </span>
+        {{/each}}
+      {{/if}}
+    </div>
+    <div class="tags-btn-box">
+      <a>添加</a>
+      <span class="hide add-action">确定</span>
+      <span class="hide cancel-action">取消</span>
+    </div>
+
+  </div>
+{{/equals}}
+{{#equals this.type 'addChild'}}
+  <a data-json="{{json this}}" data-defaultvalue="{{json this.defaultValue}}" class="btn-addChild btn-haschildLine">{{name}}</a>
+{{/equals}}
+{{#equals this.type 'delete'}}
+  <a class="btn-delete">删除</a>
+{{/equals}}
+{{#equals this.type 'select'}}
+  <div class="zcy-eevees-select" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}} data-keys="{{key}}">
+    <select class="zcy-eevees-input" data-keys="{{key}}" name="{{key}}" {{#if this.isparam}}data-isparam="{{this.isparam}}"{{/if}}>
+      <option value="">请选择</option>
+      {{#each this.options}}
+        <option value="{{this.value}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+{{/equals}}

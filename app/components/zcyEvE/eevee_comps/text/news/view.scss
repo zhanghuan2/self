@@ -1,0 +1,90 @@
+.component-news {
+    .news-container {
+        background: #FFFFFF;
+        box-shadow: 0 0 4px 0 rgba(0,0,0,0.10);
+        height: 90px;
+        padding: 16px 18px 16px 20px;
+        .image-box {
+            float: left;
+            margin: 3px 40px 0 0;
+            img {
+                width: 139px;
+                height: 24px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 20px;
+                color: #999999;
+                letter-spacing: 0;
+                margin: 8px 0;
+            }
+        }
+        .news-list {
+            margin-left: 180px;
+            height: 58px;
+            overflow: hidden;
+            position: relative;
+            .news-bd {
+                position: absolute;
+                overflow: hidden;
+                top: 0;
+                opacity: 1;
+                .news-box {
+                    float: none;
+                    overflow: hidden;
+                    height: 58px;
+                    .head {
+                        .title a {
+                            cursor: pointer;
+                            font-size: 14px;
+                            line-height: 20px;
+                            color: #4A4A4A;
+                            letter-spacing: 0;
+                            &:hover {
+                                color: #197AFF;
+                            }
+                        }
+                        .more-news {
+                            cursor: pointer;
+                            float: right;
+                            a {
+                                font-size: 12px;
+                                color: #999999;
+                                letter-spacing: 0;
+                            }  
+                            i {
+                                font-size: 12px;
+                                color: #bbb;
+                                vertical-align: baseline;
+                            }
+                            &:hover {
+                                i, a {
+                                    color: #197AFF;
+                                }
+                            }
+                        }
+                        .title {
+                            display: inline-block;
+                            width: 450px;
+                        }
+                    }
+                    .content {
+                        margin: 4px 0;
+                        font-size: 12px;
+                        color: #999999;
+                        letter-spacing: 0;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        box-orient: vertical;
+                        -webkit-box-orient: vertical;
+                        line-clamp: 2;
+                        -webkit-line-clamp: 2;
+                        height: 34px;
+                        line-height: 17px;
+                        text-align: left;
+                   }
+                }   
+            }
+        }
+    }
+}

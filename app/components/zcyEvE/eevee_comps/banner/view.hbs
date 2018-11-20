@@ -1,0 +1,44 @@
+{{#component "homepage-carousel-container evees-comp js-comp"}}
+  <div class="hide">{{json this}}</div>
+  <div class="carousel{{#equals isSuper "1"}} carousel-super{{/equals}}{{#equals type "round"}} carousel-rounded{{/equals}}{{#equals type "square"}} carousel-squared{{/equals}}{{#equals type "round-rt"}} carousel-rounded-rt{{/equals}}{{#equals type "square-lb"}} carousel-squared-lb{{/equals}}"
+       data-ride="carousel"
+       data-type="switchable"
+       data-interval="{{#if interval}}{{interval}}{{else}}3000{{/if}}"
+       data-row-size="{{rowSize}}"
+       style="height:{{#if _CSS_.height}}{{_CSS_.height}}{{else}}378px{{/if}};">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-contents">
+      {{#if _EEVEES_.imagesArr}}
+        {{#each _EEVEES_.imagesArr}}
+        <div data-role="content" class="carousel-content" data-id="1"
+              style="height:100%;
+              background-image:url('{{image}}'); background-repeat:no-repeat; background-position: center center; background-size: 100% 100%;">
+          <a {{#if href}}href="{{href}}"{{/if}} target="_blank"></a>
+        </div>
+        {{/each}}
+
+        {{else}}
+        <div data-role="content" class="carousel-content" data-id="1"
+             style="height:100%;
+                 background-image:url('http://demo-item.img-cn-hangzhou.aliyuncs.com//2018071615560916551064.png'); background-repeat:no-repeat; background-position: center center; background-size: 100% 100%;">
+          <a {{#if href}}href="{{href}}"{{/if}} target="_blank"></a>
+        </div>
+
+      {{/if}}
+    </div>
+    <div class="carousel-navs" data-role="link">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        {{#if _EEVEES_.imagesArr}}
+          {{#each _EEVEES_.imagesArr}}
+            <li data-role="nav" {{#if @first}}class="active"{{/if}}>
+              <span class="icon-zcy icon-lunbo-yuandian"></span>
+              <span class="icon-zcy icon-lunbo-yuandian-active"></span>
+            </li>
+          {{/each}}
+        {{/if}}
+      </ol>
+    </div>
+  </div>
+{{/component}}

@@ -1,0 +1,5 @@
+{{#component "eve-image evees-comp js-comp"}}
+  {{#if _EEVEES_.href}}<a href="{{_EEVEES_.href}}" {{#equals _EEVEES_.blank "yes"}}target="_blank"{{/equals}}>{{/if}}
+    <img style="width: 100%;height: 100%" alt="" src="{{#if _EEVEES_.src}}{{_EEVEES_.src}}{{else}}/assets/images/other-images/logo.png{{/if}}">
+  {{#if href}}</a>{{/if}}
+{{/component}}

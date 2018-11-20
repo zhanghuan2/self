@@ -1,0 +1,30 @@
+{{#each this}}
+  <tr class="{{#if this.pid}}{{else}}domainParent{{/if}}" data-id="{{this.id}}" data-name="{{this.name}}" data-domain="{{this.domain}}" data-discode="{{this.discode}}">
+    <td>{{#if this.parentId}}{{else}}<a class="domainShowMore">+</a>{{/if}}</td>
+    <td>{{this.name}}</td>
+    <td>{{this.domain}}</td>
+    <td>{{this.discode}}</td>
+    <td class="td-operation" style="text-align: center">
+      <a href="javascript:;" class="js-release-site" id="110" data-toggle="confirm" data-title="你确定发布此商品?" data-content="确认发布？发布后站点下所有页面的改动都将生效。也可以选择进入装修界面后发布单个页面而非整个站点。" data-event="confirm:release-site">发布站点</a>&nbsp;
+      <a href="javascript:;" class="startEevee" target="_blank">装修</a>&nbsp;
+      <a href="javascript:;" class="js-sites-config-edit">修改</a>&nbsp;
+      <a href="javascript:;" class="js-sites-code-link">绑定主区划</a>&nbsp;
+      <a href="javascript:;" class="js-sites-children-code-link">绑定子区划</a>&nbsp;
+      <a href="javascript:;">删除</a>&nbsp;
+    </td>
+  </tr>
+  {{#if this.pid}}{{else}}
+    <tr class="domainChild hide" data-pid="{{this.id}}">
+      <td></td>
+      <td colspan="4">
+        <div class="domainChild-box">
+          <span>展开所有区划</span>
+          <span>搜索：<input name="searchCode" class="searchCodeInput" /><button>搜索</button></span>
+        </div>
+        <div class="selfcode-list">
+
+        </div>
+      </td>
+    </tr>
+  {{/if}}
+{{/each}}

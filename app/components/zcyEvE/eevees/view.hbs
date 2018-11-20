@@ -1,0 +1,111 @@
+{{#component "ZCY-eevee-page-controller js-comp"}}
+  <div class="ZCY-eevee-page-controller-content">
+    <div class="editor-menu">
+      <div class="editor-menu-container">
+
+        <div class="inline-block logo-div">
+          <i class="icon-zcy_logo iconfont"></i>
+        </div>
+        <ul class="editor-menu-title">
+          <li class="hide template-li">
+            模板名称：<span class="template-name"></span>
+          </li>
+          <li class="page-li">
+            站点名称：<span class="site-name"></span>
+          </li>
+          <li class="page-li">
+            站点域名：<span class="site-net"></span>
+          </li>
+          <li class="page-li">
+            当前页面：<span class="local-page"></span>
+          </li>
+          <li class="page-li">
+            主题色：
+            <span class="theme-color">
+              <span class="theme-bgm">&nbsp;</span>
+              <span class="title">&nbsp;</span>
+            </span>
+          </li>
+        </ul>
+        <ul class="editor-menu-control" style="display: inline-block;float: right">
+          <li>
+            <!--<button class="js-page-back">&nbsp;撤销</button>-->
+          </li>
+          <li>
+            <button class="js-page-saveTemp">&nbsp;保存</button>
+          </li>
+          <li>
+            <button class="js-page-release">&nbsp;发布</button>
+          </li>
+          <li>
+            <button class="js-page-yl">&nbsp;预览</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="body-content" style="overflow-x: scroll">
+      <div class="right-button-box">
+        <span class="addRow">增加通栏行</span>
+        <span class="addRow insideRow">增加标准行</span>
+      </div>
+      <div class="ZCY-eevee-row-page" id="rowPage" data-json="{{json this._DATA_}}">
+
+        <!--<div class="page-grid-row"></div>-->
+      </div>
+    </div>
+    <div class="page-list-container">
+      <div class="left-menu inline-block">
+        <ul class="menu-li">
+          <!--<li class="">页面配置</li>-->
+          <li class="addAllComps">
+            <div>
+              <p>
+                <i class="icon-zujian iconfont"></i>
+              </p>
+              <p>
+                通用组件
+              </p>
+            </div>
+          </li>
+          <li class="settingComps">
+            <div>
+              <p>
+                <i class="icon-buju iconfont"></i>
+              </p>
+              <p>
+                布局
+              </p>
+            </div>
+          </li>
+          <li class="settingServer">
+            <div>
+              <p>
+                <i class="icon-yonghugexinghuapeizhi iconfont"></i>
+              </p>
+              <p>
+                个性化组件
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="side-content inline-block">
+        <!--<div class="pageSet tabSwitch">-->
+
+        <!--</div>-->
+        <div class="compsSet tabSwitch">
+
+        </div>
+        <div class="comps-set tabSwitch hide">
+
+        </div>
+        <div class="serverSet tabSwitch hide">
+          暂无组件
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="review ZCY-eevee-page-body hide">
+
+  </div>
+{{/component}}

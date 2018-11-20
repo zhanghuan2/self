@@ -1,0 +1,22 @@
+{{#component "component-news evees-comp js-comp"}}
+  <div class="hide">{{json this}}</div>
+<div class="news-container">
+    <div class="image-box">
+        <img src="/assets/images/other-images/news.png" />
+        <p class="description">让您的采购更有趣</p>
+    </div> 
+    <div class="news-list" data-news-list="{{json _EEVEES_.connectData}}">
+        <div class="news-bd">
+            {{#each this._EEVEES_.connectData}}
+            <div class="news-box news{{@index}}"> 
+                <div class="head">
+                    <span class="title"> <a href="{{href}}" target="_blank">{{title}}</a> </span>
+                    <span class="more-news"> <a href="{{#if moreNewsLink}}{{moreNewsLink}}{{else}}javascript:void(0);{{/if}}" target="_blank">更多<i class="icon-zcy icon-jiantou-you"></i></a> </span>
+                </div>
+                <p class="content" title="{{content}}">{{content}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>   
+</div>
+{{/component}}

@@ -1,0 +1,662 @@
+.ZCY-eevee-page-controller{
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  .review {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    .controller-mask {
+      display: none;
+    }
+    .eevee-grids{
+      outline: 0;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  .choose-page {
+    height: 100%;
+    position: relative;
+    text-align: center;
+    padding-top: 15%;
+    .eevee-block-btn {
+      vertical-align: top;
+      padding-top: 30px;
+      width: 300px;
+      height: 166px;
+      display: inline-block;
+      background:rgb(255,109,0);
+      color: #ffffff;
+      font-size: 25px;
+      margin: 15px;
+      border-radius: 10px;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+      h6 {
+        font-size: 18px;
+      }
+      button {
+        width: 80px;
+        height: 30px;
+        color: rgb(255,109,0);
+        font-size: 12px;
+        border-radius: 6px;
+        margin-top: 11px;
+      }
+    }
+    .webs-eevees {
+      background:rgb(61,131,255);
+      button {
+        color: rgb(61,131,255);
+      }
+    }
+    .template-create {
+      background:#bdbd06;
+      button {
+        color: #bdbd06;
+      }
+    }
+    .items-shop {
+      background:#1dd61d;
+      button {
+        color: #1dd61d;
+      }
+    }
+  }
+
+  .choose-url-list{
+    height: 100%;
+    background-color: #eee;
+    padding: 30px;
+    .component-header {
+      background-color: #f7f7f7;
+      padding: 6px 10px;
+      height: 53px;
+      .component-title {
+        font-size: 18px;
+      }
+    }
+    .component-body {
+      background-color: #fff;
+      padding: 20px;
+      table {
+        width: 100%;
+        border: 1px solid #e7e9ea;
+        border-collapse: collapse;
+        border-spacing: 0;
+        .domainChild {
+          .domainChild-box {
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+          }
+          ul {
+            text-align: left;
+            li{
+              display: inline-block;
+              text-align: left;
+            }
+          }
+        }
+        td {
+          height: 40px;
+          vertical-align: middle;
+          word-wrap: break-word;
+          color: #666;
+          font-size: 12px;
+          .domainShowMore {
+            border: 1px solid #eee;
+            padding: 0 5px;
+          }
+        }
+        thead {
+          background-color: #f7f7f7;
+          color: #666;
+          vertical-align: bottom;
+          border-bottom: 1px solid #e7e9ea;
+          tr {
+            background-color: #f7f7f7;
+            height: 40px;
+            color: #666;
+            font-size: 12px;
+            text-align: left;
+            th:first-child {
+              padding-left: 10px;
+              border-left: 1px solid #e7e9ea;
+            }
+            th {
+              padding: 10px;
+              font-weight: 400;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              padding: 10px;
+            }
+            &>td:first-child,&>td:first-of-type {
+              padding-left: 10px;
+              border-left: 1px solid #e7e9ea;
+            }
+            td:last-child {
+              padding-right: 10px;
+              border-right: 1px solid #e7e9ea;
+              text-align: right;
+            }
+
+          }
+        }
+      }
+    }
+  }
+  .editor-menu {
+    padding: 10px 0;
+    position: absolute;
+    z-index: 1002;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+    /* line 55, src/styles/eevee/workbench.scss */
+    .editor-menu-container {
+      mix-width: 1300px;
+      padding-left: 20px;
+      padding-right: 10px;
+      .logo-div {
+        background: #3177FD;
+        padding: 0 5px;
+        border-radius: 22px;
+        i {
+          color: #fff;
+          font-size: 22px;
+        }
+      }
+      .editor-menu-title {
+        display: inline-block;
+        padding: 9px 15px;
+        width: 800px;
+        li {
+          display: inline-block;
+          font-size: 14px;
+          width: 24%;
+          border-right: 1px dotted #D3D3D3;
+          padding: 0 10px;
+          span {
+            display: inline-block;
+            width: 93px;
+            overflow: hidden;/*内容超出后隐藏*/
+            text-overflow: ellipsis;/* 超出内容显示为省略号*/
+            white-space: nowrap;/*文本不进行换行*/
+            vertical-align: middle;
+            &.theme-color {
+              border: 1px solid #eee;
+              border-radius: 5px;
+              padding: 5px 0;
+              position: relative;
+              span.theme-bgm {
+                width: 23px;
+                position: absolute;
+                background: red;
+                height: 31px;
+                top: 0;
+              }
+              span.title {
+                padding-left: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* line 62, src/styles/eevee/workbench.scss */
+    .editor-menu-crumbs {
+      float: left;
+    }
+    /* line 65, src/styles/eevee/workbench.scss */
+    .editor-menu-crumbs > li {
+      display: inline-block;
+      margin-right: 10px;
+      line-height: 40px;
+      color: #aaa;
+    }
+    /* line 71, src/styles/eevee/workbench.scss */
+    .editor-menu-crumbs > li.crumb {
+      cursor: pointer;
+      color: #1abc9c;
+    }
+    /* line 75, src/styles/eevee/workbench.scss */
+    .editor-menu-crumbs > li.crumb:last-child {
+      font-weight: bold;
+    }
+
+    /* line 82, src/styles/eevee/workbench.scss */
+    .editor-menu-control {
+      text-align: right;
+      line-height: 40px;
+    }
+    /* line 84, src/styles/eevee/workbench.scss */
+    .editor-menu-control > li {
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    /* line 90, src/styles/eevee/workbench.scss */
+    .editor-show-key-shortcut {
+      display: inline-block;
+      color: #1abc9c;
+      cursor: help;
+    }
+    button{
+      display: inline-block;
+      cursor: pointer;
+      outline: none;
+      box-sizing: border-box;
+      padding: 0 10px;
+      margin: 0;
+      line-height: 21px;
+      border: 1px solid #1abc9c;
+      vertical-align: middle;
+      transition: all 0.4s ease-out;
+      color: #1abc9c;
+      background: none;
+      font-size: 12px;
+    }
+  }
+  .body-content{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    z-index: 99;
+    background: #fff;
+    left: 80px;
+    .right-button-box {
+      width: 82px;
+      position: fixed;
+      top: 70px;
+      right: 10px;
+      z-index: 999999;
+      span {
+        display: inline-block;
+        margin-bottom: 10px;
+        background: #fff;
+        font-size: 12px;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .body-showRight{
+    width: calc(100% - 338px);
+    left: 338px;
+  }
+  .page-list-container{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 338px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: calc(100% - 60px);
+    color: white;
+    background-color: #ffffff;
+    .inline-block{
+      display: inline-block;
+    }
+    .left-menu{
+      height: 100%;
+      width: 80px;
+      vertical-align: top;
+      border-right: 1px solid #eee;
+      ul.menu-li{
+        li{
+          padding: 10px 0;
+          font-size: 12px;
+          color: #606060;
+          border-bottom: 1px solid #ddd;
+          height: 82px;
+          text-align: center;
+          &:hover{
+            cursor: pointer;
+          }
+          &.active{
+            color: #3177FD;
+          }
+          div {
+            text-align: center;
+            padding-top: 6px;
+            i {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+    }
+    .side-content{
+      h2 {
+        margin: 0;
+        padding: 0;
+      }
+      width: 258px;
+      height: 100%;
+      background: #FFFFFF;
+      box-shadow: 5px 2px 7px 0 rgba(0,0,0,0.14);
+      margin-left:-5px;
+      color:#202020;
+      overflow: auto;
+      padding-bottom: 50px;
+      ul.editor-config-parts{
+        &>li{
+          line-height: 20px;
+          overflow: hidden;
+          padding: 10px 15px 10px 25px;
+          cursor: pointer;
+          border-bottom: 1px solid #ddd;
+        }
+      }
+      .right-button{
+        padding: 10px 0;
+        text-align:center;
+      }
+      .theme-set {
+        ul {
+          margin: 20px;
+          li {
+            display: inline-block;
+            width: 48%;
+            div {
+              height: 60px;
+            }
+            p {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .comps-set{
+    /* line 199, src/styles/eevee/workbench.scss */
+    .editor-config-parts {
+      margin-bottom: 40px;
+    }
+    /* line 202, src/styles/eevee/workbench.scss */
+    .editor-config-parts > li {
+      display: block;
+      vertical-align: top;
+    }
+    /* line 207, src/styles/eevee/workbench.scss */
+    .editor-config-parts > li h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #aaa;
+    }
+    /* line 216, src/styles/eevee/workbench.scss */
+    .editor-config-parts > li p {
+      margin: 10px 0;
+      line-height: 1.2em;
+    }
+    /* line 221, src/styles/eevee/workbench.scss */
+    .editor-config-parts > li .field-group {
+      font-size: 1em;
+      position: relative;
+    }
+    .field-group {
+      display: inline-block;
+      min-width: 85px;
+      margin: 5px 0;
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+    /* line 226, src/styles/eevee/workbench.scss */
+    .editor-config-parts > li .field-group:hover:before {
+      display: block;
+      content: attr(data-description);
+      position: absolute;
+      pointer-events: none;
+      border-radius: 3px 3px 3px 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      max-width: 280px;
+      white-space: normal;
+      padding: 2px 5px;
+      color: white;
+      bottom: calc(100% - -6px);
+      left: 0;
+    }
+    /* line 241, src/styles/eevee/workbench.scss */
+    .editor-config-parts > li .field-group:hover:after {
+      position: absolute;
+      display: block;
+      content: "";
+      pointer-events: none;
+      border-top: 3px solid rgba(0, 0, 0, 0.5);
+      border-right: 3px solid rgba(0, 0, 0, 0.5);
+      border-left: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      left: 0;
+      bottom: 100%;
+    }
+
+    /* line 258, src/styles/eevee/workbench.scss */
+    .fullscreen-dialog {
+      position: absolute;
+      z-index: 20000;
+      height: 100%;
+      width: 100%;
+      padding: 40px 0 80px;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      font-size: 16px;
+      background-color: rgba(245, 245, 245, 0.95);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+      -webkit-animation: fullscreen-dialog-show 0.2s ease-out backwards;
+    }
+    /* line 271, src/styles/eevee/workbench.scss */
+    .fullscreen-dialog > .fullscreen-dialog-container {
+      width: 1000px;
+      margin: 0 auto;
+      height: 100%;
+    }
+    /* line 277, src/styles/eevee/workbench.scss */
+    .fullscreen-dialog .fullscreen-dialog-header {
+      position: relative;
+    }
+    /* line 280, src/styles/eevee/workbench.scss */
+    .fullscreen-dialog .fullscreen-dialog-header > h1 {
+      font-size: 2em;
+      height: 40px;
+      line-height: 40px;
+    }
+    /* line 285, src/styles/eevee/workbench.scss */
+    .fullscreen-dialog .fullscreen-dialog-header .action {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 2em;
+      height: 40px;
+      line-height: 40px;
+    }
+    /* line 293, src/styles/eevee/workbench.scss */
+    .fullscreen-dialog .fullscreen-dialog-header .action > a {
+      font-size: 1em;
+    }
+  }
+  .ZCY-eevee-row-page{
+    margin-top: 60px;
+    height: 90%;
+    overflow: auto;
+    background: #f5f5f5;
+  }
+  .eevee-grids,.eevee-col-row{
+    &.hover-evt{
+      outline: 2px solid green;
+    }
+    &.click-evt{
+      outline: 2px solid green;
+    }
+    &.comp-selected{
+      .controller-mask{
+        display:block;
+      }
+    }
+    outline:1px solid #dddddd;
+  }
+
+  .side-content {
+    .compsSet {
+      button {
+        border: 1px solid #4a90e2;
+        padding: 4px 10px;
+        border-radius: 5px;
+        background: #4a90e2;
+        color: #ffffff;
+      }
+      li>ul{
+        display: none;
+      }
+      li.active > ul{
+       display: block;
+        li.lastli.active{
+          background: rgb(30,45,63);
+        }
+      }
+      ul{
+        li{
+          border-bottom:0;
+          padding-left:0;
+          &.show-title{
+            p.title {
+              padding-left: 10px;
+              font-size: 20px;
+            }
+            div.title {
+              padding: 9.5px 20px;
+              border-bottom: 1px solid #E5E5E5;
+              color: #202020;
+              &:after {
+                font-family: iconfont!important;
+                content: "\e609";
+                color: #B6B6B6;
+                float: right;
+                font-size: 12px;
+                transform: rotateX(180deg);
+              }
+            }
+            p.title-msg {
+              padding-left: 10px;
+            }
+            &.active {
+              div.title:after {
+                transform: rotateX(0deg);
+              }
+            }
+          }
+        }
+        &.show-ele {
+          background: #F8F8F8;
+          padding: 20px 14px 20px 20px;
+          li{
+            width: 66px;
+            height: 66px;
+            display: inline-block;
+            border: 1px solid #E5E5E5;
+            border-radius: 6px;
+            margin-right: 5px;
+            &.active {
+              color: #ffffff;
+              p.last-title{
+                font-size: 18px;
+              }
+            }
+          }
+          a{
+            margin: 10px 0 13px 0;
+            display: inline-block;
+          }
+          p.comps-title{
+            margin: 10px 0 0 0;
+          }
+          .show-parts {
+            width: 88px;
+            height: 50px;
+            overflow: hidden;
+          }
+        }
+      }
+      .review-img{
+        padding: 18px 0;
+        border: 1px dotted #ffffff;
+        width: 88px;
+        height:50px;
+        overflow: hidden;
+        .evees-comp{
+          background: #ffffff;
+        }
+      }
+    }
+  }
+}
+.new-right{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+}
+html,body,.root-container,.ZCY-eevee-page-controller,.ZCY-eevee-page-controller-content,.body-content{
+  height:100%;
+}
+.root-container{
+  overflow: auto;
+}
+.ZCY-eevee-row-page {
+  position: relative;
+
+}
+body{
+  overflow: hidden;
+}
+.zcyEvE-comps-modal {
+  .modal-content, .modal-dialog {
+    width: 1000px;
+  }
+  .docomps-line {
+    padding: 20px 0;
+    border-top: 1px solid #dddddd;
+    label {
+      span {
+        display: inline-block;
+        width: 100px;
+      }
+    }
+  }
+}
+.comps-new-title {
+  div.title {
+    padding: 9px 20px;
+    border-bottom: 1px solid #E5E5E5;
+    border-top: 1px solid #E5E5E5;
+    color: #202020;
+    i {
+      color: #B6B6B6;
+      float: right;
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{{#component 'tab-header-search js-comp evees-comp'}}
+  <div style="display: inline-block;vertical-align: middle" class="">
+    <div id="env-config" data-middle="" data-user-id=""></div>
+    <div class="search-tab">
+      <a class="product-tab eevee-theme-bg eevee-theme-text active {{#equals _EEVEES_.proShow 0}}hide{{/equals}}" href="javascript:void(0)">商品</a>
+      <a class="supplier-tab eevee-theme-text {{#equals _EEVEES_.supShow 0}}hide{{/equals}}" href="javascript:void(0)">供应商</a>
+    </div>
+    <form class="form form-search" type="get" id="form-search" action="/eevees/search" data-hrefbase="{{_HREF_.main}}" style="width:480px;">
+      <fieldset>
+        <div class="input-group input-group-append input-search">
+          <input type="hidden" class="isSupplier" name="isSupplier" value="0">
+          {{#if fcid}}
+            <input type="hidden" name="fcid" value="{{fcid}}">
+            {{#equals type "vaccine"}}
+              <input type="hidden" name="normal" value="2">
+              <input type="hidden" name="type" value="vaccine">
+            {{else}}
+              {{#equals normal 1}}
+                <input type="hidden" name="normal" value="1">
+              {{/equals}}
+              <input type="hidden" name="type" value="hall">
+            {{/equals}}
+          {{/if}}
+          <i class="icon-zcy icon-search"></i>
+          <input type="text" name="q" class="search-input items-suggest active eevee-theme-border" value="{{#if q}}{{q}}{{/if}}" autocomplete="off" placeholder="输入你要搜索的商品"><span class="input-group-btn">
+        <button class="btn btn-primary btn-medium eevee-theme-bg" id="search-button" type="submit">{{#if _EEVEES_.btnName}}{{_EEVEES_.btnName}}{{else}}搜索{{/if}}</button>
+        <button class="btn btn-primary btn-medium {{#equals _EEVEES_.allBtnShow 1}}{{else}}hide{{/equals}}" id="allSearch-button" type="submit" style="width: 90px">{{#if _EEVEES_.allbtnName}}{{_EEVEES_.btnName}}{{else}}搜索全站{{/if}}</button>
+        </span>
+        </div>
+      </fieldset>
+      {{#if _EEVEES_.hotWords}}
+        <div class="search-hot">
+          <ul class="search-hot-ul">
+            {{!-- <li><span class="title">{{i18n "Popular searches " bundle="all_mix"}}:</span></li> --}}
+            {{#each _EEVEES_.hotWords}}
+              <li><a href="{{_HREF_.main}}/eevees/search?q=" target="_blank">{{this}}</a></li>
+            {{/each}}
+          </ul>
+        </div>
+      {{else}}
+        <div class="search-hot">
+          <ul class="search-hot-ul js-hotword">
+            <li><a href="/eevees/search?q=%E7%A1%92%E9%BC%93" target="_blank">硒鼓</a></li>
+
+            <li><a href="/eevees/search?q=%E6%89%93%E5%8D%B0%E7%BA%B8" target="_blank">打印纸</a></li>
+
+            <li><a href="/eevees/search?q=%E4%B8%AD%E6%80%A7%E7%AC%94" target="_blank">中性笔</a></li>
+
+            <li><a href="/eevees/search?q=%E5%A2%A8%E7%B2%89" target="_blank">墨粉</a></li>
+
+            <li><a href="/eevees/search?q=%E5%A2%A8%E7%9B%92" target="_blank">墨盒</a></li>
+
+            <li><a href="/eevees/search?q=%E7%B2%89%E7%9B%92" target="_blank">粉盒</a></li>
+
+            <li><a href="/eevees/search?q=%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98" target="_blank">移动硬盘</a></li>
+          </ul>
+        </div>
+      {{/if}}
+
+    </form>
+  </div>
+
+    <div class="shop-cart evees-comp eevees-shop-cart js-comp {{#equals _EEVEES_.cartShow 0}}hide{{/equals}}" >
+      <input class="count-query-url" value="{{queryCountUrl}}" type="hidden">
+      <input class="shop-cart-tags" value="{{json _TAGS_}}" type="hidden">
+      <a
+        {{#if _USER_}}
+          {{#if defaultLink}}
+          href="/{{defaultLink}}"
+          {{else}}
+            {{#equals _TAGS_.blocktrade 1}}
+          href="/carts/supperProCart"
+            {{else equals _TAGS_.vaccine 1}}
+          href="/cart?tag=vaccine"
+            {{else}}
+          href="/cart"
+            {{/equals}}
+          {{/if}}
+        {{else}}
+          href="/login"
+        {{/if}}
+      >
+        <div class="js-goto-mycart ">
+          <i class="icon-zcy icon-gouwuche1 pull-left eevee-theme-text" style="margin-top: -4px;"></i>
+          <span class="font-14 eevee-theme-text">购物车</span>
+          {{#if _USER_}}
+            <strong id="js-cart-count">0</strong>
+          {{/if}}
+        </div>
+      </a>
+    </div>
+
+{{/component}}
